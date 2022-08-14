@@ -1,0 +1,19 @@
+#include <iostream>
+#include <fstream>
+int main()
+{
+
+    std::string line;
+    std::ifstream file(“my_file.txt”);
+    int num = 0;
+    int i = 0;
+    if (file.is_open())
+    {
+        while (getline(file,line))
+        {
+            num += stoi(line);
+        }
+        file.close();
+    }
+    std::cout << num;
+}
